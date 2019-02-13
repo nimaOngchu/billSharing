@@ -1,0 +1,12 @@
+
+// @import'../sass/variables';
+@mixin update-theme-color( $new-theme-color){
+
+$theme-color:$new-theme-color;
+}
+@mixin md-icon-size($size: 24px) {
+  font-size: $size;
+  height: $size;
+  width: $size;
+  line-height: $size;
+}

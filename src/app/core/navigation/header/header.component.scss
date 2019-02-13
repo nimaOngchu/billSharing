@@ -1,0 +1,42 @@
+
+
+ .profile {
+  display: flex;
+  padding: .5rem .4rem;
+  align-items: center;
+  border-bottom: 1px solid grey;
+  // color:unquote($string: map-get($theme-pallete , accent ));
+
+  &__photo {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+
+  }
+
+  &__text-container {
+    padding-left: 0;
+
+  }
+
+  &__text {
+    padding: 5px;
+    font-size: .8rem;
+    text-transform: none;
+
+    &-username {
+      @extend .profile__text;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+
+  }
+
+  &__view {
+    margin-left: 2rem;
+    cursor: pointer;
+
+  }
+
+}

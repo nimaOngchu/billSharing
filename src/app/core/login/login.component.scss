@@ -1,0 +1,61 @@
+@import '../../../sass/variables';
+
+.main__container {
+    height:$main__content-container-height;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: auto;
+
+  }
+  .container{
+
+    padding:4rem;
+// box-shadow: $box-shadow;
+  }
+.mat-raised-button{
+       width:100%;
+   height: 3rem;
+   margin-top:1rem;
+}
+.mat-form-field{
+    width:100%;
+    display: block;
+
+}
+.mat-icon{
+    margin-right: 1rem;
+    bottom: -2rem;
+}
+.span__text{
+  text-align:center;
+  margin-top:2rem;
+  .text-signUp{
+    cursor: pointer;
+    font-weight: bolder;
+    text-shadow: -1px 9px 6px rgba(150, 150, 179, 0.85);
+}
+}
+.social__buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top:1rem;
+
+    .facebook-button{
+        background:rgba(9, 82, 238, 0.658);
+        color:white;
+
+    }
+    .google-button{
+        background:#d64830;
+        color:white;
+    }
+
+}.mt{
+ margin-top:1rem;
+
+}
+.mat-form-field{
+    margin-top:1rem;
+}

@@ -1,0 +1,18 @@
+$container-bg:black;// background for divs that are not efected by mat-theme.  use this to make them consistent with the theme.
+$container-fg:white;// foreground for divs that are not efected by mat-theme.  use this to make them consistent with the theme.(text)
+$box-shadow:0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+$footer-height: 5rem;
+$fontFamily:'Raleway';
+$main-font-size: 14px;
+$p-main-container: 2rem;
+$sidenav-width:15rem;
+$main__content-header-height:8.3rem;
+$main__content-container-height:calc( 100vh - 9rem);
+//variables for changing themes
+$theme-color-set :(
+black,
+teal,
+blue,
+purple);
+
+$theme: 'dark';

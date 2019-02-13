@@ -1,0 +1,41 @@
+@import"../../../../sass/variables";
+
+.sidenav-footer {
+  position: fixed;
+  bottom: 0;
+
+  width: $sidenav-width;
+  justify-content: space-evenly;
+  overflow: hidden;
+    padding:0;
+
+  .footer-icon {
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+
+  }
+.box-shadow{
+  box-shadow: $box-shadow;
+}
+  .facebook-color {
+    color: #3B5998;
+    @extend .footer-icon;
+
+  }
+
+  .twitter-color {
+    color: #1DA1F2;
+    @extend .footer-icon;
+  }
+
+  .youtube-color {
+    color: #cc181e;
+    @extend .footer-icon;
+  }
+
+  .instagram-color {
+    color: #d62976;
+    @extend .footer-icon;
+  }
+}
