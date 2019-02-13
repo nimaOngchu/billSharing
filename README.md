@@ -1,2 +1,2 @@
 # billSharing
-a billsharing web app
+a billsharing web app 
