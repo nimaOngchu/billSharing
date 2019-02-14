@@ -7,6 +7,8 @@ import { CoreRoutingModule } from './core/core-routing.module';
 import { GroupComponent } from './group/group.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AngularFireModule } from '@angular/fire';
+import { environment} from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -17,9 +19,10 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-AppRoutingModule,
+    AppRoutingModule,
     CoreModule,
     CoreRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase)
 
   ],
   providers: [],

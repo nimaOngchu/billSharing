@@ -11,6 +11,8 @@ import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import { SidenavFooterComponent } from './navigation/sidenav-footer/sidenav-footer.component';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
  @NgModule({
   imports: [
@@ -19,7 +21,9 @@ import { SidenavFooterComponent } from './navigation/sidenav-footer/sidenav-foot
      MaterialModule,
      CommonModule,
      BrowserModule,
-     RouterModule
+     RouterModule,
+     AngularFireAuthModule,
+     AngularFirestoreModule
 
    ],
 
@@ -38,7 +42,9 @@ import { SidenavFooterComponent } from './navigation/sidenav-footer/sidenav-foot
     MaterialModule,
     CommonModule,
     BrowserModule,
-    RouterModule
+    RouterModule,
+    AngularFireAuthModule,
+    AngularFirestoreModule
 
    ],
 
