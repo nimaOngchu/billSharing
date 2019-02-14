@@ -39,4 +39,4 @@ testem.log
 Thumbs.db
 
 # firebase settings
-/src/environments
+environments
