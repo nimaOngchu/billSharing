@@ -13,6 +13,7 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
 import { SidenavFooterComponent } from './navigation/sidenav-footer/sidenav-footer.component';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AuthService } from './auth.service';
 
  @NgModule({
   imports: [
@@ -49,7 +50,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
    ],
 
   providers: [
-    LoginService
+    LoginService,
+    AuthService
   ]
 })
 export class CoreModule { }
