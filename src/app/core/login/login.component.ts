@@ -9,6 +9,7 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent implements OnInit {
   registerView = false;
+
   constructor( public loginService: LoginService, public authService: AuthService) { }
 
   ngOnInit() {

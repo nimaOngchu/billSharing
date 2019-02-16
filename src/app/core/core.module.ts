@@ -8,12 +8,17 @@ import { LoginService } from './login/login.service';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { HeaderComponent } from './navigation/header/header.component';
+import { SidenavHeaderComponent } from './navigation/sidenav-header/sidenav-header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import { SidenavFooterComponent } from './navigation/sidenav-footer/sidenav-footer.component';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AuthService } from './auth.service';
+import { LoginLayoutComponent } from './layouts/login-layout/login-layout.component';
+import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component';
+import { AuthGuard } from './guard/auth.guard';
+import { SidenavMainContentHeaderComponent } from './navigation/sidenav-main-content-header/sidenav-main-content-header.component';
+import { RedirectToMainGuard } from './guard/redirect-to-main.guard';
 
  @NgModule({
   imports: [
@@ -31,9 +36,13 @@ import { AuthService } from './auth.service';
   declarations: [
     NavigationComponent,
      LoginComponent,
-     HeaderComponent,
+     SidenavHeaderComponent,
      SidenavListComponent,
-     SidenavFooterComponent],
+     SidenavFooterComponent,
+     LoginLayoutComponent,
+     HomeLayoutComponent,
+     SidenavMainContentHeaderComponent,
+   ],
 
   exports: [
     NavigationComponent,
@@ -51,7 +60,9 @@ import { AuthService } from './auth.service';
 
   providers: [
     LoginService,
-    AuthService
+    AuthService,
+    AuthGuard,
+    RedirectToMainGuard
   ]
 })
 export class CoreModule { }

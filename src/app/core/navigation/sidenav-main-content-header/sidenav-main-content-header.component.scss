@@ -1,0 +1,72 @@
+@import'../../../../sass/variables';
+.box-shadow {
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+  }
+  .mat-sidenav-content {
+    overflow: hidden;
+  }
+
+  .dropdown-content-item {
+    display: block;
+    padding: 1.5rem;
+  }
+
+  .btn-toggle {
+    position: fixed;
+    left: 1rem;
+    top: 1rem;
+    z-index: 200;
+
+  }
+
+  .content__header-container {
+    flex-direction: column;
+    height: $main__content-header-height;
+    padding: 0;
+
+    .content__header-nav {
+      @extend .box-shadow;
+
+      .content-nav-icon {
+        // @include md-icon-size(24px );
+        margin-right: 1rem;
+        cursor: pointer;
+
+      }
+
+      .content-nav-spacer {
+        flex: 1 1 auto;
+      }
+    }
+
+    .content__header-text {
+      margin-top: 1rem;
+      float: left;
+      width: 100%;
+      padding-left: 1rem;
+    }
+
+  }
+
+  // Theme changer dropdown box with the fab-mini buttons
+  .change__theme-menu-item {
+    text-align: center;
+
+  }
+
+  @each $color in $theme-color-set {
+    .button-#{$color} {
+      background-color: $color;
+
+    }
+
+    .button-#{$color}-container {
+      display: inline-block;
+      margin: 1px;
+    }
+
+    .button-#{$color}-container:hover {
+
+      background: $color;
+    }
+  }

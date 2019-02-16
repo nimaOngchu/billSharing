@@ -1,68 +1,70 @@
-<div class="main__container">
-  <!-- Login Template -->
 
-  <mat-card class="container" *ngIf="!registerView">
-      <form [formGroup]='loginService.loginForm'>
-          <mat-form-field>
-            <mat-icon matPrefix>email_outline</mat-icon>
-            <input autofocus type="email" matInput placeholder="email" formControlName="email">
-            <mat-error *ngIf="loginService.checkValidation('email', loginService.loginForm)">
-              {{loginService.emaiErrors(loginService.loginForm)}}
-            </mat-error>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-icon matPrefix>lock_outline</mat-icon>
-            <input type="password" autocomplete="false" matInput placeholder="Password" formControlName="password">
-            <mat-error *ngIf="loginService.checkValidation('password', loginService.loginForm)">
-             {{loginService.fieldRequired}}
-            </mat-error>
-          </mat-form-field>
-          <button type="submit" mat-raised-button color="primary">SIGN IN</button>
-        </form>
-        <div class="span__text">Or SIgn In With</div>
-        <div class="social__buttons">
-          <button mat-fab class="facebook-button"><i class="fab fa-facebook-f"></i></button>
-          <button mat-fab class="google-button"><i class="fab fa-google"></i></button>
-        </div>
-        <div class="span__text">
-          <span style="color:rgb(114, 105, 105)">Not a member?</span>
-          <span class="text-signUp" (click)="registerView = true"> Sign up now</span>
-        </div>
+  <mat-card class="main__container ">
+    <!-- Login Template -->
+
+    <mat-card class="container" *ngIf="!registerView">
+        <form [formGroup]='loginService.loginForm'>
+            <mat-form-field>
+              <mat-icon matPrefix>email_outline</mat-icon>
+              <input autofocus type="email" matInput placeholder="email" formControlName="email">
+              <mat-error *ngIf="loginService.checkValidation('email', loginService.loginForm)">
+                {{loginService.emaiErrors(loginService.loginForm)}}
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-icon matPrefix>lock_outline</mat-icon>
+              <input type="password" autocomplete="false" matInput placeholder="Password" formControlName="password">
+              <mat-error *ngIf="loginService.checkValidation('password', loginService.loginForm)">
+               {{loginService.fieldRequired}}
+              </mat-error>
+            </mat-form-field>
+            <button type="submit" mat-raised-button color="primary">SIGN IN</button>
+          </form>
+          <div class="span__text">Or SIgn In With</div>
+          <div class="social__buttons">
+            <button mat-fab class="facebook-button"><i class="fab fa-facebook-f"></i></button>
+            <button mat-fab class="google-button" (click) = 'authService.loginWithSocial("google")'><i class="fab fa-google"></i></button>
+          </div>
+          <div class="span__text">
+            <span style="color:rgb(114, 105, 105)">Not a member?</span>
+            <span class="text-signUp" (click)="registerView = true"> Sign up now</span>
+          </div>
+    </mat-card>
+
+    <!-- REGISTER TEMPLATE -->
+    <mat-card  class="container" *ngIf="registerView">
+        <form [formGroup] = loginService.registerForm>
+            <mat-form-field>
+              <mat-icon matPrefix>person_outline</mat-icon>
+              <input autofocus type="text" matInput placeholder="Username" formControlName="username">
+              <mat-error *ngIf="loginService.checkValidation('username', loginService.registerForm)">
+                  {{loginService.fieldRequired}}
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-icon matPrefix>lock_outline</mat-icon>
+              <input type="email" autocomplete="false" matInput placeholder="Email" formControlName="email">
+              <mat-error *ngIf="loginService.checkValidation('email', loginService.registerForm)">
+                  {{loginService.emaiErrors(loginService.registerForm)}}
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-icon matPrefix>email_outline</mat-icon>
+              <input type="password" autocomplete="false" matInput placeholder="Password" formControlName="password">
+              <mat-hint align="end">{{'The passowrd must be 6 character long with 1 uppercase and 1 number'}}</mat-hint>
+              <mat-error *ngIf="loginService.checkValidation('password', loginService.registerForm)">
+                {{loginService.getErrorPassword(loginService.registerForm)}}
+              </mat-error>
+            </mat-form-field>
+            <button type="submit" mat-raised-button color="primary">Sign Up</button>
+          </form>
+          <div class="span__text">Or SIgn Up With</div>
+          <div class="social__buttons">
+            <button mat-fab class="facebook-button"><i class="fab fa-facebook-f"></i></button>
+            <button mat-fab class="google-button"><i class="fab fa-google"></i></button>
+          </div>
+          <button mat-button (click)="registerView =false " class="mt">Back to login</button>
+
+    </mat-card>
   </mat-card>
 
-  <!-- REGISTER TEMPLATE -->
-  <mat-card  class="container" *ngIf="registerView">
-      <form [formGroup] = loginService.registerForm>
-          <mat-form-field>
-            <mat-icon matPrefix>person_outline</mat-icon>
-            <input autofocus type="text" matInput placeholder="Username" formControlName="username">
-            <mat-error *ngIf="loginService.checkValidation('username', loginService.registerForm)">
-                {{loginService.fieldRequired}}
-              </mat-error>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-icon matPrefix>lock_outline</mat-icon>
-            <input type="email" autocomplete="false" matInput placeholder="Email" formControlName="email">
-            <mat-error *ngIf="loginService.checkValidation('email', loginService.registerForm)">
-                {{loginService.emaiErrors(loginService.registerForm)}}
-              </mat-error>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-icon matPrefix>email_outline</mat-icon>
-            <input type="password" autocomplete="false" matInput placeholder="Password" formControlName="password">
-            <mat-hint align="end">{{'The passowrd must be 6 character long with 1 uppercase and 1 number'}}</mat-hint>
-            <mat-error *ngIf="loginService.checkValidation('password', loginService.registerForm)">
-              {{loginService.getErrorPassword(loginService.registerForm)}}
-            </mat-error>
-          </mat-form-field>
-          <button type="submit" mat-raised-button color="primary">Sign Up</button>
-        </form>
-        <div class="span__text">Or SIgn Up With</div>
-        <div class="social__buttons">
-          <button mat-fab class="facebook-button"><i class="fab fa-facebook-f"></i></button>
-          <button mat-fab class="google-button"><i class="fab fa-google"></i></button>
-        </div>
-        <button mat-button (click)="registerView =false " class="mt">Back to login</button>
-
-  </mat-card>
-</div>

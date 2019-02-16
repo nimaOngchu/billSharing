@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from './core/auth.service';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  loggedin: boolean;
+  constructor(public authService: AuthService) {
+
+  }
+
 }
