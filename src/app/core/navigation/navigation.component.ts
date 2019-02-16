@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { NavItem } from './navItems';
 import { MatSidenav } from '@angular/material';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-navigation',
@@ -9,10 +10,19 @@ import { MatSidenav } from '@angular/material';
 })
 export class NavigationComponent implements OnInit {
   localStorageKey = 'theme';
-  constructor() {}
+  screenWidth: number;
+  private screenWidth$ = new BehaviorSubject<number>(window.innerWidth);
+  @ViewChild('sidenav') sidenav: MatSidenav;
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.screenWidth$.next(event.target.innerWidth);
+  }
+  constructor() { }
 
   ngOnInit() {
-
+    this.screenWidth$.subscribe(width => {
+      this.screenWidth = width;
+    });
   }
 
   getTheme(): string {

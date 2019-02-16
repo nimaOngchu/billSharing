@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../auth.service';
+import { MainContentNameService } from '../shared/main-content-name.service';
 
 @Component({
   selector: 'app-sidenav-header',
@@ -8,9 +9,11 @@ import { AuthService } from '../../auth.service';
 })
 export class SidenavHeaderComponent implements OnInit {
 
-  constructor(public authService: AuthService) { }
+  constructor(public authService: AuthService, private contentName: MainContentNameService) { }
 
   ngOnInit() {
   }
-
+  passContentName(name: string) {
+    this.contentName.setContentName(name);
+}
 }

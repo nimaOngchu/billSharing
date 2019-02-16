@@ -1,9 +1,7 @@
 <mat-toolbar color='primary' class="content__header-container" >
   <mat-toolbar color='primary' class="content__header-nav">
-    <mat-slide-toggle (click)="drawer.toggle()">Slide me!</mat-slide-toggle>
-    <span class="content-nav-spacer"></span>
-    <!-- <span class="theme-select-text">change Theme</span> -->
-    <mat-icon class="content-nav-icon " matTooltip="Change theme" aria-label="Button that displays a tooltip when focused or hovered over"
+      <span class="content-nav-spacer"></span>
+      <mat-icon class="content-nav-icon " matTooltip="Change theme" aria-label="Button that displays a tooltip when focused or hovered over"
       [matMenuTriggerFor]="menu">format_color_fill</mat-icon>
     <mat-menu #menu="matMenu">
       <div class="change__theme-menu-item">
@@ -16,5 +14,5 @@
       </div>
     </mat-menu>
   </mat-toolbar>
-  <div class="content__header-text">adfasdf</div>
+  <div class="content__header-text">{{contentTitle}}</div>
 </mat-toolbar>

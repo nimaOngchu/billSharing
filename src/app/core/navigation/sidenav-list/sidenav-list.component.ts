@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SidenavList } from './sidenavList';
+import { MainContentNameService } from '../shared/main-content-name.service';
 
 @Component({
   selector: 'app-sidenav-list',
@@ -22,9 +23,12 @@ export class SidenavListComponent implements OnInit {
       displayName: 'all expenses'
     }
   ];
-  constructor() { }
+  constructor(public contentName: MainContentNameService) { }
 
   ngOnInit() {
   }
-
+  sendContentName(name: string) {
+    console.log('inside group triggered');
+    this.contentName.setContentName(name);
+}
 }

@@ -1,6 +1,6 @@
 <div class="main" [ngClass]="getTheme()">
   <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #drawer mode="side" opened role="navigation" class='sidenav'>
+    <mat-sidenav #sidenav mode="side" [opened]="screenWidth> 640"  role="navigation" class='sidenav'>
       <mat-nav-list class='sidenav'>
         <header>
           <app-sidenav-header></app-sidenav-header>
