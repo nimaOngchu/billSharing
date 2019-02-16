@@ -22,7 +22,7 @@
           </form>
           <div class="span__text">Or SIgn In With</div>
           <div class="social__buttons">
-            <button mat-fab class="facebook-button"><i class="fab fa-facebook-f"></i></button>
+            <button mat-fab class="facebook-button"(click)= "authService.loginWithSocial('facebook')"><i class="fab fa-facebook-f"></i></button>
             <button mat-fab class="google-button" (click) = 'authService.loginWithSocial("google")'><i class="fab fa-google"></i></button>
           </div>
           <div class="span__text">

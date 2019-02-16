@@ -1,17 +1,17 @@
 <mat-toolbar color='primary' class ='box-shadow'>
   <h1>BILL SHARE</h1>
 </mat-toolbar>
-<div class="profile" *ngIf="authService.user | async as user">
+<div class="profile" *ngIf="authService.user | async as user" [matMenuTriggerFor]="menu_header ">
     <img id="avatar" src="{{user.photoURL}}" alt="img" class="profile__photo">
     <div class="profile__text-container">
       <div class=" profile__text-username" id="fullname">{{user.displayName}}</div>
       <div id="email" class="profile__text">{{user.email}}</div>
     </div>
-    <div class="profile__view" [matMenuTriggerFor]="menu_header ">
+    <div class="profile__view" >
       <mat-icon matPrefix>expand_more</mat-icon>
     </div>
   </div>
-  <mat-menu #menu_header="matMenu" xPosition="after">
+  <mat-menu #menu_header="matMenu" xPosition="after" yPostion='before'>
     <button mat-menu-item routerLink="/profile" (click) = "passContentName('profile')">
       <mat-icon matPrefix>account_circle</mat-icon><span>Profile</span>
     </button>

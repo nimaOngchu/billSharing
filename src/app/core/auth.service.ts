@@ -55,6 +55,7 @@ export class AuthService {
     if (loginMethod === 'google') {
       provider = new friebase.auth.GoogleAuthProvider();
     } else if (loginMethod === 'facebook') {
+      console.log('inside facebook auth');
       provider = new friebase.auth.FacebookAuthProvider();
     }
     return this.oAuthLogin(provider);
