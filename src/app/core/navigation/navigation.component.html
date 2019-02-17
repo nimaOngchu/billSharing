@@ -1,16 +1,21 @@
 <div class="main" [ngClass]="getTheme()">
   <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #sidenav mode="side" [opened]="screenWidth> 640"  role="navigation" class='sidenav'>
+    <mat-sidenav #sidenav [mode]="mode" [opened]="showSideNav"  role="navigation" [position] ='position' class='sidenav'>
       <mat-nav-list class='sidenav'>
         <header>
-          <app-sidenav-header></app-sidenav-header>
+          <app-sidenav-header>
+          </app-sidenav-header>
         </header>
         <app-sidenav-list></app-sidenav-list>
       </mat-nav-list>
       <app-sidenav-footer></app-sidenav-footer>
     </mat-sidenav>
     <mat-sidenav-content role="main">
-          <app-sidenav-main-content-header (emitThemeClass) = 'changeTheme($event)'></app-sidenav-main-content-header>
+          <app-sidenav-main-content-header (emitThemeClass) = 'changeTheme($event)'>
+              <button mat-icon-button (click) ='sidenav.toggle()' [ngClass]="btnToogle">
+                  <mat-icon aria-label="Example icon-button with a heart icon">menu</mat-icon>
+                Menu</button> 
+          </app-sidenav-main-content-header>
       <router-outlet class="main__content"></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
