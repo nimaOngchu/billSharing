@@ -3,16 +3,22 @@
   box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
 }
  .profile {
-  display: flex;
-  padding: .5rem .4rem;
-  align-items: center;
+  // display: flex;
+  // padding: .5rem .4rem;
+  // align-items: center;
+  text-align: center;
   border-bottom: 1px solid grey;
   // color:unquote($string: map-get($theme-pallete , accent ));
+  &__photo-container{
+    width: 15rem;
+    height: 12rem;
+    overflow: hidden;
+  }
 
   &__photo {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
+    width: 15rem;
+    height: 10rem;
+    // border-radius: 50%;
     object-fit: cover;
 
   }
