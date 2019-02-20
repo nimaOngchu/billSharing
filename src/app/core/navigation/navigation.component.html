@@ -14,9 +14,9 @@
           <app-sidenav-main-content-header (emitThemeClass) = 'changeTheme($event)'>
               <button mat-icon-button (click) ='sidenav.toggle()' [ngClass]="btnToogle">
                   <mat-icon aria-label="Example icon-button with a heart icon">menu</mat-icon>
-                Menu</button> 
+                Menu</button>
           </app-sidenav-main-content-header>
-      <router-outlet class="main__content"></router-outlet>
+      <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

@@ -9,12 +9,14 @@ import { ProfileComponent } from './user/profile/profile.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AngularFireModule } from '@angular/fire';
 import { environment} from '../environments/environment';
+import { HouseholdComponent } from './household/household.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GroupComponent,
-    ProfileComponent
+    ProfileComponent,
+    HouseholdComponent
   ],
   imports: [
     BrowserModule,

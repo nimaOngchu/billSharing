@@ -32,7 +32,7 @@ this.makeScreenResponsive();
         this.showSideNav = false;
         this.mode = 'over';
         this.btnToogle = 'showBtnToggle';
-        this.position = 'end';
+        this.position = 'start';
       }
       if (width > 640) {
         this.showSideNav = true;

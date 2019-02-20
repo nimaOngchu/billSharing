@@ -23,7 +23,7 @@ export class SidenavListComponent implements OnInit {
     {
       icon: 'weekend',
       displayName: 'Household',
-      routerLink: '/group'
+      routerLink: '/household'
 
     }
     ,   {

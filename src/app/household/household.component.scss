@@ -1,0 +1,23 @@
+@import '../../sass/variables';
+.main__container{
+    padding: $p-main-container;
+    display: flex;
+
+    .card-gap{
+        margin:1rem;
+    }
+    .household-information{
+
+        .house-summary{
+            margin:1rem;
+        }
+
+        .housemates{
+            margin:1rem;
+        }
+    }
+
+}
+.activity-feed{
+    margin:1rem;
+}
