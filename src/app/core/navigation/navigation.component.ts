@@ -10,7 +10,10 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class NavigationComponent implements OnInit {
   localStorageKey = 'theme';
-  screenWidth: number;
+  position: string;
+  showSideNav: boolean;
+  mode: string;
+  btnToogle: string;
   private screenWidth$ = new BehaviorSubject<number>(window.innerWidth);
   @ViewChild('sidenav') sidenav: MatSidenav;
   @HostListener('window:resize', ['$event'])
@@ -20,8 +23,23 @@ export class NavigationComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+this.makeScreenResponsive();
+  }
+
+  makeScreenResponsive() {
     this.screenWidth$.subscribe(width => {
-      this.screenWidth = width;
+      if (width < 640) {
+        this.showSideNav = false;
+        this.mode = 'over';
+        this.btnToogle = 'showBtnToggle';
+        this.position = 'end';
+      }
+      if (width > 640) {
+        this.showSideNav = true;
+        this.mode = 'side';
+        this.btnToogle = 'hideBtnToggle';
+        this.position = 'start';
+      }
     });
   }
 
