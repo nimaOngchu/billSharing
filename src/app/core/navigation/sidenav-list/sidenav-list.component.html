@@ -1,13 +1,13 @@
 <div class="sidenav__list">
     <div *ngFor="let navitem of navitems">
-      <div class="sidenav__list-item">
+      <div class="sidenav__list-item" [routerLink] = 'navitem.routerLink'>
         <div class="sidenav__list-item-icon">
           <mat-icon matPrefix>{{navitem.icon}}</mat-icon>
         </div>
         <div class="sidenav__list-item-text">{{navitem.displayName}}</div>
       </div>
     </div>
-    <div class="dropdown">
+    <!-- <div class="dropdown">
       <div class="dropbtn">
         <div class="sidenav__list-item ">
           <div class="sidenav__list-item-icon">
@@ -63,5 +63,5 @@
           <div class="sidenav__list-item-text ">friend B</div>
         </li>
       </ul>
-    </div>
+    </div> -->
   </div>

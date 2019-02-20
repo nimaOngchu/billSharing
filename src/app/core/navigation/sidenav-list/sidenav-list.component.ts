@@ -12,15 +12,30 @@ export class SidenavListComponent implements OnInit {
   navitems = [
     {
       icon: 'dashboard',
-      displayName: 'dashboard'
+      displayName: 'dashboard',
+      routerLink: ''
     },
     {
-      icon: 'assessment',
-      displayName: 'recent activity'
+      icon: 'monetization_on',
+      displayName: 'expenses',
+      routerLink: ''
     },
     {
-      icon: 'attach_money',
-      displayName: 'all expenses'
+      icon: 'weekend',
+      displayName: 'Household',
+      routerLink: '/group'
+
+    }
+    ,   {
+      icon: 'person',
+      displayName: 'Profile',
+      routerLink: '/profile'
+
+    },
+    {
+      icon: 'build',
+      displayName: 'setting',
+      routerLink: ''
     }
   ];
   constructor(public contentName: MainContentNameService) { }

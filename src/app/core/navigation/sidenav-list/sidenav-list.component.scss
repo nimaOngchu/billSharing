@@ -5,12 +5,13 @@
   padding-top: 1rem;
   overflow: auto;
   height:calc(100vh - (2 * 62px) - 11.3rem);
-
+  text-transform: capitalize;
   &-item {
     display: flex;
-    padding: 6px 0;
+    padding: 1rem 0;
     align-items: center;
     cursor: pointer;
+    font-size: 1.2rem;
 
     &-icon {
       margin: 0 .7rem;
@@ -43,7 +44,7 @@
 }
 
 .mat-icon{
-  @include md-icon-size(1.2rem );
+  @include md-icon-size(1.5rem );
   }
   .sidenav__list-item:hover {
     background-color: rgba(105, 105, 109, 0.3);

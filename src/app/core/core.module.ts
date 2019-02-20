@@ -19,6 +19,7 @@ import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component
 import { AuthGuard } from './guard/auth.guard';
 import { SidenavMainContentHeaderComponent } from './navigation/sidenav-main-content-header/sidenav-main-content-header.component';
 import { RedirectToMainGuard } from './guard/redirect-to-main.guard';
+import { NavbarComponent } from './navbar/navbar.component';
 
  @NgModule({
   imports: [
@@ -42,6 +43,7 @@ import { RedirectToMainGuard } from './guard/redirect-to-main.guard';
      LoginLayoutComponent,
      HomeLayoutComponent,
      SidenavMainContentHeaderComponent,
+     NavbarComponent,
    ],
 
   exports: [

@@ -1,5 +1,6 @@
 export interface SidenavList {
     icon: string;
-    displayName: string;
+  displayName: string;
+  routerLink: string;
 
   }
