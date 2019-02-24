@@ -22,8 +22,8 @@ export class SidenavListComponent implements OnInit {
     },
     {
       icon: 'weekend',
-      displayName: 'Household',
-      routerLink: '/household'
+      displayName: 'Households',
+      routerLink: '/households'
 
     }
     ,   {

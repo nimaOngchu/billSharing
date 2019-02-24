@@ -7,7 +7,7 @@ import { AuthGuard } from './guard/auth.guard';
 import { ProfileComponent } from '../user/profile/profile.component';
 import { LoginLayoutComponent } from './layouts/login-layout/login-layout.component';
 import { RedirectToMainGuard } from './guard/redirect-to-main.guard';
-import { HouseholdComponent } from '../household/household.component';
+import { HouseholdsComponent } from '../households/households.component';
 const appRoutes: Routes = [
 
   { path: '', component: HomeLayoutComponent, canActivate: [AuthGuard],
@@ -15,7 +15,7 @@ const appRoutes: Routes = [
       { path: '', redirectTo: 'profile', pathMatch: 'full' },
       { path: 'profile', component: ProfileComponent },
       { path: 'group', component: GroupComponent },
-      { path: 'household', component: HouseholdComponent },
+      { path: 'households', component: HouseholdsComponent },
     ]
   },
   {

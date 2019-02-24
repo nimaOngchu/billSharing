@@ -9,14 +9,18 @@ import { ProfileComponent } from './user/profile/profile.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AngularFireModule } from '@angular/fire';
 import { environment} from '../environments/environment';
-import { HouseholdComponent } from './household/household.component';
+import { HouseholdsComponent } from './households/households.component';
+import { HouseComponent } from './households/house/house.component';
+import { AddHouseComponent } from './households/add-house/add-house.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GroupComponent,
     ProfileComponent,
-    HouseholdComponent
+    HouseholdsComponent,
+    HouseComponent,
+    AddHouseComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +32,7 @@ import { HouseholdComponent } from './household/household.component';
 
   ],
   providers: [],
+  entryComponents:[ AddHouseComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {

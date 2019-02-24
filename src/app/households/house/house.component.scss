@@ -1,0 +1,22 @@
+@import '../../../sass/variables';
+.main__container {
+    padding: $p-main-container;
+    display: flex;
+    flex-wrap: wrap;
+
+    .card-gap {
+      margin: 1rem;
+    }
+
+    .household-information {
+      flex: 1;
+        min-width: 15rem;
+      margin: .5rem;
+    }
+
+    .activity-feed {
+      margin: .5rem;
+     min-width: 30rem; // change min width to 17 rem for mobile screen
+      flex: 3;
+    }
+  }

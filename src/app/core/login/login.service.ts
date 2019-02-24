@@ -39,7 +39,7 @@ export class LoginService {
         .hasError('pattern') ?
         'Password must be at least 6 characters, 1 uppercase letter and 1 number' : '';
   }
-  // check the validation of entire form before leting submit
+  // check  validation
   checkValidation(input: string, form: FormGroup) {
     const validation = form.get(input).invalid && (form.get(input).dirty || form.get(input).touched);
     return validation;

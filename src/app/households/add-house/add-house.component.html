@@ -1,0 +1,26 @@
+<mat-toolbar style ='justify-content: center; margin-bottom: 2rem;' color ='primary'>Add a new house</mat-toolbar>
+
+<form [formGroup] = 'addHouseForm'(ngSubmit) = 'onSubmit(addHouseForm.value)' >
+  <mat-form-field appearance="outline">
+    <mat-label>House title</mat-label>
+    <input matInput placeholder="House title" formControlName="houseTitle">
+  </mat-form-field>
+  <h3>Address</h3>
+  <mat-form-field appearance="outline">
+    <mat-label>Street</mat-label>
+    <input matInput placeholder="street" formControlName="street">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>city</mat-label>
+    <input matInput placeholder="city" formControlName="city">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>state</mat-label>
+    <input matInput placeholder="state" formControlName="state">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Post code</mat-label>
+    <input matInput placeholder="Post code" formControlName="postCode">
+  </mat-form-field>
+  <button mat-raised-button color='accent' type="submit"> submit</button>
+</form>

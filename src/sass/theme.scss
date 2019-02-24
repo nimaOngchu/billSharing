@@ -45,6 +45,9 @@ $teal-dark-theme:mat-dark-theme($teal-primary, $teal-accent);
 
 }
 
+.include_theme{
+  
+}
 // @include change-theme($theme);
 // Defining Custome fonts
 $custom-typography: mat-typography-config($font-family: $fontFamily);

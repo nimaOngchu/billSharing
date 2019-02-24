@@ -56,7 +56,7 @@
 
   @each $color in $theme-color-set {
     .button-#{$color} {
-      background-color: $color;
+      background-color: $color !important;
 
     }
 

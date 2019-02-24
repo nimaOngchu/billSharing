@@ -16,6 +16,7 @@ import { User } from './model/user';
 })
 export class AuthService {
   user: Observable<User>;
+  // userId: string;
   private loggedIn = new BehaviorSubject<boolean>(this.getLoggedInsession());
   private loggedInSession: 'loggedInSession';
 

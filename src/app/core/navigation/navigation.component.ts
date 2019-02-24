@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { NavItem } from './navItems';
 import { MatSidenav } from '@angular/material';
 import { BehaviorSubject } from 'rxjs';
+import {OverlayContainer} from '@angular/cdk/overlay';
 
 @Component({
   selector: 'app-navigation',
@@ -20,10 +21,14 @@ export class NavigationComponent implements OnInit {
   onResize(event) {
     this.screenWidth$.next(event.target.innerWidth);
   }
-  constructor() { }
+
+  constructor(private overlayContainer: OverlayContainer) {
+
+  }
 
   ngOnInit() {
-this.makeScreenResponsive();
+    this.makeScreenResponsive();
+    this.overlayContainer.getContainerElement().classList.add(this.getTheme());
   }
 
   makeScreenResponsive() {
@@ -44,9 +49,15 @@ this.makeScreenResponsive();
   }
 
   getTheme(): string {
-    return localStorage.getItem(this.localStorageKey);
+    return localStorage.getItem('theme');
   }
   changeTheme(event) {
-    localStorage.setItem(this.localStorageKey, event);
+    localStorage.setItem('theme', event);
+    const overlayClass = this.overlayContainer.getContainerElement().classList;
+    if (overlayClass.length > 1) {
+      overlayClass.remove('teal-theme', 'yellow-theme', 'blue-theme', 'purple-theme');
+      overlayClass.add(this.getTheme());
+    }
+
   }
 }
