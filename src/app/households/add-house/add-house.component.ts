@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { HouseHold } from 'src/app/core/model/houseHold.model';
-import { userInfo } from 'os';
+
 import { AuthService } from 'src/app/core/auth.service';
-import { map } from 'rxjs/operators';
+
 import { DataService } from 'src/app/core/data.service';
+import { compileComponentFromMetadata } from '@angular/compiler';
 @Component({
   selector: 'app-add-house',
   templateUrl: './add-house.component.html',
@@ -31,6 +32,7 @@ export class AddHouseComponent implements OnInit {
   onSubmit(formData): void {
 
     this.house = {
+      houseTitle: formData.houseTitle,
       city: formData.city,
       street: formData.street,
       postCode: formData.postCode,
